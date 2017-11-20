@@ -19,7 +19,7 @@ namespace kho17
         public fXuatHang()
         {
             InitializeComponent();
-            loadTable();
+           // loadTable();
         }
 
     

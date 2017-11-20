@@ -19,7 +19,7 @@ namespace kho17
         public fNhapHang()
         {
             InitializeComponent();
-            loadTable();
+            //loadTable();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
