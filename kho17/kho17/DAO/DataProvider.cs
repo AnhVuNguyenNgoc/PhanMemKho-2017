@@ -8,10 +8,21 @@ using System.Threading.Tasks;
 
 namespace QuanLyKho.DAO
 {
-    class DataProvider
+    public class DataProvider
     {
-        private string connectSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog=HeQuanTri_SinhVien;Integrated Security=True";
 
+        //Y1 nghĩa cái pattern này là khởi tạo 1 lần duy nhất rồi xài chung các class => static
+
+        private static DataProvider instance; //crt +r+E
+
+        public static DataProvider Instance
+        {
+            get { if (instance == null) instance = new DataProvider(); return instance; }
+
+            private set { DataProvider.instance = value; }
+        }
+
+        private string connectSTR = "Data Source=SOCKIENTAM;Initial Catalog=QLKHO;Integrated Security=True";
         //dùng để lấy ra table trong sql
         public DataTable ExecuteQuery(string query,object[] parameters = null) //Có thể truyền n parameters vào cũng dc 
         {
@@ -20,7 +31,7 @@ namespace QuanLyKho.DAO
 
             using (SqlConnection connection = new SqlConnection(connectSTR))  //Tự giải phóng biến connection ->using
             {
-                connection.Open();
+                connection.Open();// connection 
 
                 SqlCommand command = new SqlCommand(query, connection);   //command.execute   ??? Tại sao không execute như thế này  KHÔNG LINH HOẠT AH 
 
@@ -64,7 +75,7 @@ namespace QuanLyKho.DAO
                  */
             }
 
-            return data;
+            return data; //trả về dữ liệu từ csdl 
         }
 
         //CHỈ DÙNG CHO INSERT ,UPDATE,DELETE THÔI NHÁ.

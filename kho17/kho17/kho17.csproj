@@ -73,6 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\PhanQuyenBLL.cs" />
+    <Compile Include="BLL\themkhachhangBLL.cs" />
+    <Compile Include="BLL\xuatkhoBLL.cs" />
+    <Compile Include="DAO\xuatkhoDAO.cs" />
     <Compile Include="GUI\control\TonHangHoaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -205,6 +208,7 @@
     <EmbeddedResource Include="GUI\control\TonSLControl.resx">
       <DependentUpon>TonSLControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

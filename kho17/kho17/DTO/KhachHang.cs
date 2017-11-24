@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyKho.DTO
 {
-    class KhachHang
+      public  class KhachHang
     {
         private string email;
 
@@ -48,5 +48,6 @@ namespace QuanLyKho.DTO
             get { return maKh; }
             set { maKh = value; }
         }
+
     }
 }

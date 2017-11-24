@@ -8,6 +8,7 @@ namespace kho17.BLL
 {
     class PhanQuyenBLL
     {
+        
         //test 
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyKho.DTO
 {
-    class PhieuXuat
+    public class PhieuXuat
     {
         private float tongTien;
 

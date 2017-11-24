@@ -23,5 +23,6 @@ namespace QuanLyKho.DTO
             get { return maLoai; }
             set { maLoai = value; }
         }
+       
     }
 }

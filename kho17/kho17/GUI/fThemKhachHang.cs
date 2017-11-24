@@ -1,4 +1,5 @@
-﻿using System;
+﻿using kho17.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +36,23 @@ namespace kho17.GUI
         private void simpleButton2_Click(object sender, EventArgs e)
         {
 
+        }
+
+       
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnluu_Click(object sender, EventArgs e)
+        {
+            string ma = txtma.Text;
+            string ten = txtten.Text;
+            string diachi = txtdiachi.Text;
+            string dt = txtdt.Text;
+            string mail = txtmail.Text;
+            bool a = themkhachhangBLL.Instance.Insertkhachhang(ma,ten,diachi,dt,mail);
         }
     }
 }
