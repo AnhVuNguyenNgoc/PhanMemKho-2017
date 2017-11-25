@@ -1,4 +1,5 @@
-﻿using System;
+﻿using kho17.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace kho17
         public Form1()
         {
             InitializeComponent();
+
+            if (fDangNhap.group_id == "gr001")
+            {
+                lbtest.Text = "admin";
+            }
+            else
+            {
+                brbtnPhanQuyen.Enabled=false;
+                brbtnLichSuHT.Enabled = false;
+                lbtest.Text = "user";
+            }
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -82,6 +96,40 @@ namespace kho17
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var form = new fBaoCao();
+            {
+                foreach (var child in MdiChildren)// tìm kiếm 
+                {
+                    if (child.Name == form.Name)//kiểm tra tồn 
+                    {
+                        child.Activate();//
+                        return;//trả về
+                    }
+                }
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void brbtnPhanQuyen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = new fPhanQuyen();
+            {
+                foreach (var child in MdiChildren)// tìm kiếm 
+                {
+                    if (child.Name == form.Name)//kiểm tra tồn 
+                    {
+                        child.Activate();//
+                        return;//trả về
+                    }
+                }
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = new fKiemKe();
             {
                 foreach (var child in MdiChildren)// tìm kiếm 
                 {

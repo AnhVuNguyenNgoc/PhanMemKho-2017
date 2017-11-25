@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,37 @@ namespace QuanLyKho.DTO
 {
     class NguoiDung
     {
+        public NguoiDung()
+        {
+
+        }
+        public NguoiDung(string nhom_id, int dienThoai, string diaChiND, string tenND, string matKhau, string tenDangNhap)
+        {
+            this.Nhom_id = nhom_id;
+            this.DienThoai = dienThoai;
+            this.DiaChiND = diaChiND;
+            this.MatKhau = matKhau;
+            this.TenDangNhap = tenDangNhap;
+            this.TenND = tenND;
+        }
+
+        public NguoiDung(DataRow row)
+        {
+            this.Nhom_id = row["GROUP_ID"].ToString();
+            this.TenDangNhap = row["TENDANGNHAP"].ToString();
+            this.TenND = row["TENND"].ToString();
+            this.DiaChiND = row["DIACHIND"].ToString();
+            this.DienThoai = (int)row["DIENTHOAI"];
+
+        }
+        private string nhom_id;
+
+        public string Nhom_id
+        {
+            get { return nhom_id; }
+            set { nhom_id = value; }
+        }
+
         private int dienThoai;
 
         public int DienThoai

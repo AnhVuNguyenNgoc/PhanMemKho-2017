@@ -19,18 +19,18 @@ namespace kho17
         public fXuatHang()
         {
             InitializeComponent();
-            loadTable();
+            //loadTable();
         }
 
     
         void loadTable()
         {
 
-            string query = "exec sp_LoadStudentById @masv , @tensv";
+            //string query = "exec sp_LoadStudentById @masv , @tensv";
 
-            DataProvider provider = new DataProvider();
+           // DataProvider provider = new DataProvider();
 
-            dgvProduct.DataSource = provider.ExecuteQuery(query, new object[]{"sv001","anh vũ"});
+            //dgvProduct.DataSource = provider.ExecuteQuery(query, new object[]{"sv001","anh vũ"});
 
         }
 
@@ -44,6 +44,21 @@ namespace kho17
         {
             fThemKhachHang fThemKH = new fThemKhachHang();
             fThemKH.Show();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEdit8_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupControl3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
      

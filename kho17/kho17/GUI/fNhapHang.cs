@@ -19,7 +19,7 @@ namespace kho17
         public fNhapHang()
         {
             InitializeComponent();
-            loadTable();
+            //loadTable();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -29,11 +29,11 @@ namespace kho17
         void loadTable()
         {
 
-            string query = "exec sp_LoadStudentById @masv , @tensv";
+            //string query = "exec sp_LoadStudentById @masv , @tensv";
 
-            DataProvider provider = new DataProvider();
+            //DataProvider provider = new DataProvider();
 
-            dgvProduct.DataSource = provider.ExecuteQuery(query, new object[]{"sv001","anh vũ"});
+            //dgvProduct.DataSource = provider.ExecuteQuery(query, new object[]{"sv001","anh vũ"});
 
            // txtNPP.Text=provider.ExecuteNonQuery(query, new object[] {"sv001","anh vũ" }).ToString();
 

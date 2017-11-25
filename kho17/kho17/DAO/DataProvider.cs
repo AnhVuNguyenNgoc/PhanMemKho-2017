@@ -8,9 +8,22 @@ using System.Threading.Tasks;
 
 namespace QuanLyKho.DAO
 {
-    class DataProvider
+    public  class  DataProvider
     {
-        private string connectSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog=HeQuanTri_SinhVien;Integrated Security=True";
+        private static DataProvider instance;
+        public static DataProvider Instance
+        {
+            get { if (instance == null) instance = new DataProvider(); return instance; }
+
+            private set { DataProvider.instance = value; }
+        }
+
+        private DataProvider()
+        {
+        }//khởi tạo mặc định private luôn
+
+
+        private string connectSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog=QLKHO;Integrated Security=True";
 
         //dùng để lấy ra table trong sql
         public DataTable ExecuteQuery(string query,object[] parameters = null) //Có thể truyền n parameters vào cũng dc 
